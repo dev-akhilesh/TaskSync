@@ -13,7 +13,7 @@ app.use(cors({
 
 app.use(express.json());
 app.get('/', (req, res) => {
-    res.send('Welcome to Backend of HackSync');
+    res.send('Welcome to Backend of TaskSync');
 })
 
 // Routes

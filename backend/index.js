@@ -6,15 +6,17 @@ const UserRoute = require('./Routes/UserRoute');
 const connection = require('./Config/db');
 const TaskRoute = require('./Routes/TaskRoute');
 const app = express();
+
 app.use(cors({
-    origin: ["http://localhost:3000", "https://task-sync-theta.vercel.app/"], // paste frontend  deployed link here
+    origin: ["http://localhost:3000", "https://task-sync-theta.vercel.app"], 
     credentials: true
-}))
+}));
 
 app.use(express.json());
+
 app.get('/', (req, res) => {
     res.send('Welcome to Backend of TaskSync');
-})
+});
 
 // Routes
 app.use('/user', UserRoute);
@@ -26,6 +28,5 @@ app.listen(8080, async () => {
         console.log("Connected to MongoDB")
     } catch (error) {
         console.log("Error connecting to MongoDB", error);
-
     }
-})
+});
